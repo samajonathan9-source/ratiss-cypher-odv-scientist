@@ -1910,14 +1910,14 @@
 							<div class=" flex justify-between mt-0.5 mb-2 mx-0.5 max-w-full" dir="ltr">
 								<div class="ml-1 self-end flex items-center flex-1 min-w-0">
 									<InputMenu
-										bind:files
-										selectedModels={selectedModelIds}
-										{fileUploadCapableModels}
-										{screenCaptureHandler}
-										{inputFilesHandler}
-										uploadFilesHandler={() => {
-											filesInputElement.click();
-										}}
+											bind:files
+											selectedModels={selectedModelIds}
+											{fileUploadCapableModels}
+											{screenCaptureHandler}
+											{inputFilesHandler}
+											uploadFilesHandler={() => {
+												filesInputElement.click();
+											}}
 										uploadGoogleDriveHandler={async () => {
 											try {
 												const fileData = await createPicker();
@@ -1961,15 +1961,28 @@
 											chatInput?.focus();
 										}}
 									>
-										<button
-											type="button"
-											id="input-menu-button"
-											class="bg-transparent hover:bg-gray-100 text-gray-700 dark:text-white dark:hover:bg-gray-800 rounded-full size-[1.875rem] flex justify-center items-center outline-hidden focus:outline-hidden shrink-0"
-											aria-label={$i18n.t('More')}
-										>
-											<PlusAlt className="size-5" />
-										</button>
-									</InputMenu>
+											<button
+												type="button"
+												id="input-menu-button"
+												class="bg-transparent hover:bg-gray-100 text-gray-700 dark:text-white dark:hover:bg-gray-800 rounded-full size-[1.875rem] flex justify-center items-center outline-hidden focus:outline-hidden shrink-0"
+												aria-label={$i18n.t('More')}
+											>
+												<PlusAlt className="size-5" />
+											</button>
+										</InputMenu>
+
+										<Tooltip content={$i18n.t('Didier (Import Direct)')} placement="top">
+											<button
+												type="button"
+												id="didier-import-button"
+												class="bg-transparent hover:bg-gray-100 text-gray-700 dark:text-white dark:hover:bg-gray-800 rounded-full size-[1.875rem] flex justify-center items-center outline-hidden focus:outline-hidden shrink-0 ml-1"
+												on:click={() => {
+													filesInputElement.click();
+												}}
+											>
+												<DocumentArrowUp className="size-5" />
+											</button>
+										</Tooltip>
 
 									{#if showWebSearchButton || showImageGenerationButton || showCodeInterpreterButton || showToolsButton || showSkillsButton || (toggleFilters && toggleFilters.length > 0)}
 										<div
