@@ -80,6 +80,7 @@
 	import { getUserSettings } from '$lib/apis/users';
 	import dayjs from 'dayjs';
 	import { getChannels } from '$lib/apis/channels';
+	import RatissTaskConsole from '$lib/components/ratiss/RatissTaskConsole.svelte';
 
 	const unregisterServiceWorkers = async () => {
 		if ('serviceWorker' in navigator) {
@@ -1337,7 +1338,7 @@
 {#if $config?.features.enable_community_sharing}
 	<SyncStatsModal bind:show={showSyncStatsModal} eventData={syncStatsEventData} />
 {/if}
-
+<RatissTaskConsole />
 <Toaster
 	theme={$theme.includes('dark')
 		? 'dark'
