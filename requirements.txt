@@ -1,0 +1,7 @@
+chainlit
+requests
+docker
+psutil
+nemotron-think
+pm-copilot-engine
+bcrypt

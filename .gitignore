@@ -43,3 +43,11 @@ collect.sh
 
 __pycache__/
 *.pyc
+
+# Exclude heavy assets for Gemini Studio import
+integrations/open-webui-webview/static/assets/emojis/
+
+# Exclude tests and examples for Gemini Studio
+packages/*/test/
+packages/*/examples/
+integrations/*/test/
